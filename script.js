@@ -15,16 +15,19 @@ function getComputerChoice(){
 
 function getHumanChoice(){
     let choice = prompt("Please enter your choice of rock, paper or scissors:");
-    if (choice != "rock" || choice != "paper" || choice != "scissors"){
+    choice = choice.toLowerCase()
+    if (!(choice === "rock" || choice === "paper" || choice === "scissors")){
+        console.log(choice + " is not a valid option. Please try again!")
         return getHumanChoice();
     }
     else{
+        console.log(choice[0].toUpperCase() + choice.slice(1) + " has been selected!")
         return choice;
     }
 }
 
 function playRound(){
-    const humanChoice = getHumanChoice().toLowerCase()
+    const humanChoice = getHumanChoice()
     const computerChoice = getComputerChoice()
 
     if (humanChoice === computerChoice){

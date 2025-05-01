@@ -26,7 +26,10 @@ function getHumanChoice(){
     }
 }
 
-function playRound(){
+
+
+function playGame(){
+   function playRound(){
     const humanChoice = getHumanChoice()
     const computerChoice = getComputerChoice()
 
@@ -64,9 +67,15 @@ function playRound(){
             humanScore++;
         }
     }
+    } 
+    for (i = 0; i<5; i++){
+        playRound()
+        console.log("Human Score: " + humanScore);
+        console.log("Computer Score: " + computerScore);
+    }
 }
 
 let humanScore = 0;
 let computerScore = 0;
 
-playRound()
+playGame()
